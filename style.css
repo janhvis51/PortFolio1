@@ -1,0 +1,566 @@
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+a {
+    text-decoration: none;
+}
+.large-header {
+    /* position: -webkit-sticky;  */
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #333;
+    overflow: hidden;
+    background-image: url('https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/img/demo-1-bg.jpg');
+}
+#large-header{
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+   
+    overflow: hidden;
+}
+
+#demo-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.main-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 4em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.main-title .thin {
+    font-weight: 300;
+}
+
+header {
+    padding: 10px 40px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.logo {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav .togglebtn {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 45px;
+    right: 3%;
+    z-index: 5;
+    cursor: pointer;
+    display: none;
+}
+nav .togglebtn span {
+    display: block;
+    background-color: #007ced;
+    margin: 5px 0px;
+    width: 100%;
+    height: 3px;
+    transition: 0.3s;
+    transition-property: transform, opacity;
+}
+nav .navlinks {
+    list-style-type: none;
+}
+nav .navlinks li {
+    display: inline-block;
+}
+nav .navlinks li a {
+    color: #e5e5e5;
+    margin-right: 2.5rem;
+}
+.containers {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 4rem;
+}
+.containers .hero-pic {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 15px solid #444;
+    box-shadow: 5px 7px 25px rgba(0, 0, 0, 0.5);
+}
+.hero-pic img {
+    height: 100%;
+    width: 100%;
+    transition: 0.5s;
+}
+.hero-pic img:hover {
+    transform: scale(1.2);
+}
+.hero-text {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+.hero-text h5 {
+    color: #e5e5e5;
+    font-size: 14px;
+}
+.hero-text h5 span {
+    color: #007ced;
+    font-size: 16px;
+}
+.hero-text h1 {
+    color: #007ced;
+    font-size: 3rem;
+}
+.hero-text p {
+    color: #e5e5e5;
+}
+.btn-group {
+    margin: 45px 0;
+}
+.btn-group .btn {
+    border-color: #d5d5d5;
+    color: #fff;
+    background-color: #333;
+    padding: 12px 25px;
+    margin: 5px 0px;
+    margin-right: 7px;
+    border-radius: 30px;
+    border: 2px solid #e5e5e5;
+    box-shadow: 0 10px 10px -8px rgb(0 0 0 / 78%);
+}
+.btn.active {
+    border-color: #007ced;
+}
+.hero-text .social i {
+    color: #e5e5e5;
+    font-size: 18px;
+    margin-right: 10px;
+    transition: 0.5s;
+}
+.hero-text .social i:hover {
+    color: #007ced;
+    transform: rotate(360deg);
+}
+/* Responsive design & displaying navbar for small screen */
+@media (max-width: 930px) {
+    nav .togglebtn {
+        display: initial;
+    }
+    /* for toggle button */
+    .click {
+        top: 45px;
+    }
+    .click span {
+        position: absolute;
+        margin-top: 12px;
+    }
+    .click span:first-child {
+        transform: rotate(-40deg);
+    }
+    .click span:nth-child(2) {
+        opacity: 0;
+        margin: 0;
+    }
+    .click span:last-child {
+        transform: rotate(45deg);
+        top: 0;
+    }
+    nav .navlinks {
+        position: absolute;
+        top: 110px;
+        right: -100%;
+        bottom: 0;
+        width: 60%;
+        height: 100vh;
+        background-color: #222;
+        z-index: 3;
+        box-shadow: 5px 13px 30px rgba(0, 0, 0, 0.1);
+        transition: 0.5s;
+        padding: 25px 0px;
+    }
+    nav .navlinks li {
+        display: block;
+    }
+    nav .navlinks li a {
+        display: block;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    nav .navlinks.open {
+        right: 0;
+    }
+}
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding-top: 2rem;
+    }
+    .hero-text {
+        padding: 40px 0px;
+    }
+}
+/* About Section */
+
+.about-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:#030c1c;
+    padding: 20px;
+    height: 100vh;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
+}
+.image-container {
+    flex: 1;
+    max-width: 30%;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-image {
+    width: 50vw ;
+    height: 80vh;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.about-image:hover {
+    transform: scale(1.05);
+}
+.image-box {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 10px;
+}
+.image-box img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+}
+.image-box:hover img {
+    transform: scale(1.2);
+}
+.about-caption {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.a-large {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}
+.a-small {
+    font-family: 'Times New Roman', Times, serif;
+}
+.social-buttons {
+    font-size: 50px;
+}
+text {
+    fill: #35322a;
+    filter: url('#money');
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 100px;
+    font-weight: 900;
+}
+/* Skills Section */
+#skills {
+    height: 100vh; /* Full height */
+    background-image: url('../Image.png'); /* Path to your chess background image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.skills-caption {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: rgb(231, 221, 221);
+    /* transition: color 0.5s ease; */
+}
+
+.black-container {
+    width: 52vw;
+    height: 60vh;
+    background-color:#030c1c;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.image-box-s {
+    width: 15vh;
+    height: 20vh;
+    background-color: rgb(91, 5, 5); /* Placeholder for images */
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+}
+
+.image-box-s img {
+    width: 105px;
+    height: 105px;
+    object-fit: cover; 
+}
+
+.image-box-s p {
+    margin-top: 10px;
+    color: white;
+}
+
+.image-box-s:hover {
+    transform: scale(1.1);
+    background-color: lightgrey;
+}
+@font-face {
+    font-family: 'neontubes';
+    src: url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.eot");
+    src: url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.eot?#iefix") format("embedded-opentype"), url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.woff2") format("woff2"), url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.woff") format("woff"), url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #030c1c;
+  }
+   
+  .main {
+    display: block;
+    top: 10%;
+    left: 30%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 5vh;
+    font-family: "neontubes";
+    font-size: 16vw;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .main span {
+    display: block;
+    position: relative;
+    -webkit-transform: translateZ(0) translate3D(0, 0, 0);
+            transform: translateZ(0) translate3D(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    will-change: opacity;
+  }
+  .main .webdev {
+    color: #ffd9e2;
+    text-shadow: 0 0 0 transparent, 0 0 10px #ff003c, 0 0 20px rgba(255, 0, 60, 0.5), 0 0 40px #ff003c, 0 0 100px #ff003c, 0 0 200px #ff003c, 0 0 300px #ff003c, 0 0 500px #ff003c, 0 0 1000px #ff003c;
+    -webkit-animation: blink 4s infinite alternate;
+            animation: blink 4s infinite alternate;
+  }
+  .main .socod {
+    font-size: 11vw;
+    color: #d4eaff;
+    text-shadow: 0 0 0 transparent, 0 0 10px #2695ff, 0 0 20px rgba(38, 149, 255, 0.5), 0 0 40px #2695ff, 0 0 100px #2695ff, 0 0 200px #2695ff, 0 0 300px #2695ff, 0 0 500px #2695ff;
+    -webkit-animation: buzz 0.01s infinite alternate;
+            animation: buzz 0.01s infinite alternate;
+  }
+   
+  @-webkit-keyframes buzz {
+    70% {
+      opacity: 0.80;
+    }
+  }
+   
+  @keyframes buzz {
+    70% {
+      opacity: 0.80;
+    }
+  }
+  @-webkit-keyframes blink {
+    40% {
+      opacity: 1;
+    }
+    42% {
+      opacity: 0.8;
+    }
+    43% {
+      opacity: 1;
+    }
+    45% {
+      opacity: 0.2;
+    }
+    46% {
+      opacity: 1;
+    }
+  }
+  @keyframes blink {
+    40% {
+      opacity: 1;
+    }
+    42% {
+      opacity: 0.8;
+    }
+    43% {
+      opacity: 1;
+    }
+    45% {
+      opacity: 0.2;
+    }
+    46% {
+      opacity: 1;
+    }
+  }
+  @media screen and (min-width: 1000px) {
+    .main {
+      width: 100px;
+      font-size: 100px;
+    }
+   
+    .main .socod {
+      font-size: 103px;
+    }
+  }
+  /* projectssss--------------------- */
+  @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;700&display=swap');
+
+:root{
+--color:#030c1c;
+}
+
+
+
+.container {
+  text-align: center;
+  color: var(--color);
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url(https://images.unsplash.com/photo-1519120944692-1a8d8cfc107f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80);
+  background-size: cover;
+  background-position: center;
+  
+/*  this is where the magic happens:  */
+  background-attachment: fixed;
+}
+
+.h1project {
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.pproject {
+  max-width: 52ch;
+  line-height: 1.5;
+  padding: 1em;
+}
+
+.aproject {
+  display: inline-block;
+  padding: 1em 3.5em;
+  background-color: var(--color);
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 0.3em;
+  font-weight: 700;
+  letter-spacing: .5px;
+  font-size: .875rem;
+}
+
+.blank,
+.other {
+  width: 100%;
+  min-height: 60vh;
+  background-color: var(--color);
+}
+
+.second {
+  background-image:url(https://images.unsplash.com/photo-1514496959998-c01c40915c5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);
+  background-attachment: fixed;
+  height: 1200px;
+}
+
+.h3project {
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-top: 1em;
+}
+
+.card > a {
+  margin-bottom: 2em;
+}
+
+.item {
+  display: flex;
+  max-width: 320px;
+  background-color: white;;
+  flex-direction: column;
+  align-items: center;
+  border-radius: .5em;
+  -webkit-box-shadow: 0px 29px 38px -15px rgba(0,0,0,0.43);
+  -moz-box-shadow: 0px 29px 38px -15px rgba(0,0,0,0.43);
+  box-shadow: 0px 29px 38px -15px rgba(0,0,0,0.43);
+}
+
+.img {
+  width: 90%;
+  height: 200px;
+  background-color: lightgrey;
+  background-size: cover;
+  background-position: center;
+  margin-top: 20px;
+  border-radius: .3em;;
+}
+
+.img-first {
+  background-image: url(https://images.unsplash.com/photo-1522163182402-834f871fd851?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1606&q=80);
+}
+
+.img-second {
+  background-image: url(https://images.unsplash.com/photo-1628746404106-4d3843b231b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y2F2aW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60);
+}
+
+.img-third {
+  background-image: url(https://images.unsplash.com/photo-1632853073412-782bf0279d65?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+}
+
+.second {
+  flex-direction: row;
+  gap: 1.6em;
+}

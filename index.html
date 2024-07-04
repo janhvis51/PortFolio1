@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- GSAP and other animation libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TimelineMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+    <script src="https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/TweenLite.min.js"></script>
+    <script src="https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/EasePack.min.js"></script>
+    <script src="https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/rAF.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+
+    <!-- Additional libraries -->
+    <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
+    <!-- contact -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script defer src="JS.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="large-header" class="large-header">
+       <div class="hero-header">
+            <div class="wrapper">
+                <header>
+                    <div class="logo"></div>
+                    <nav>
+                        <div class="togglebtn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <ul class="navlinks">
+                            <li><a href="#large-header">Home</a></li>
+                            <li><a href="#about-container">About Me</a></li>
+                            <li><a href="#skills">Skills</a></li>
+                            <li><a href="#container">Project</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                </header>
+                <div class="containers">
+                     <div class="hero-pic">
+                        <img src="pic.jpg" alt="profile pic">
+                     </div>
+                     <div class="hero-text">
+                        <h5>Hi I'm <span class="input">Frontend Developer</span></h5>
+                        <h1>Janhvi Singh</h1>
+                        <p>I have a deep interest in frontend development and have demonstrated my skills through various projects.
+                             I am proficient in technologies such as React, JavaScript, HTML, and CSS. One of my notable projects is a movie recommendation app designed and implemented using
+                              HTML, CSS, JavaScript, and React. This app seamlessly integrates with the TMDB API to provide users with comprehensive movie data.
+                        </p>
+    
+                        <div class="btn-group">
+                           <a href="#" class="btn active">Download CV</a>
+                           <a href="#" class="btn">Contact</a>
+                        </div>
+    
+                        <div class="social">
+                            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-dribbble"></i></a>
+                            <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+         <!---typed js for typing text effect-->
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+         <script>
+            /** creating button click show hide navbar **/
+            var togglebtn = document.querySelector(".togglebtn");
+            var nav = document.querySelector(".navlinks");
+    
+            togglebtn.addEventListener("click", function() {
+                this.classList.toggle("click");
+                nav.classList.toggle("open");
+            });
+    
+            var typed = new Typed(".input", {
+                strings: ["Frontend Developer", "Web Developer"],
+                typeSpeed: 70,
+                backSpeed: 55,
+                loop: true
+            });
+         </script>
+         <canvas id="demo-canvas"></canvas>
+    </div>
+    <!-- ---------about-------- -->
+    <div class="about-container" id="about-container">
+        <div class="content-container">
+            <div class="about-caption">
+                <svg width='600' height='200'>
+                    <filter id='money'>
+                      <feMorphology in='SourceGraphic' operator='dilate' radius='2' result='expand'/>
+                  
+                      <feOffset in='expand' dx='1' dy='1' result='shadow_1'/>
+                      <feOffset in='expand' dx='2' dy='2' result='shadow_2'/>
+                      <feOffset in='expand' dx='3' dy='3' result='shadow_3'/>
+                      <feOffset in='expand' dx='4' dy='4' result='shadow_4'/>
+                      <feOffset in='expand' dx='5' dy='5' result='shadow_5'/>
+                      <feOffset in='expand' dx='6' dy='6' result='shadow_6'/>
+                      <feOffset in='expand' dx='7' dy='7' result='shadow_7'/>
+                  
+                      <feMerge result='shadow'>
+                        <feMergeNode in='expand'/>
+                        <feMergeNode in='shadow_1'/>
+                        <feMergeNode in='shadow_2'/>
+                        <feMergeNode in='shadow_3'/>
+                        <feMergeNode in='shadow_4'/>
+                        <feMergeNode in='shadow_5'/>
+                        <feMergeNode in='shadow_6'/>
+                        <feMergeNode in='shadow_7'/>
+                      </feMerge>
+                  
+                      <feFlood flood-color='#ebe7e0'/>
+                      <feComposite in2='shadow' operator='in' result='shadow'/>
+                  
+                      <feMorphology in='shadow' operator='dilate' radius='1' result='border'/>
+                      <feFlood flood-color='#35322a' result='border_color'/>
+                      <feComposite in2='border' operator='in' result='border'/>
+                  
+                      <feOffset in='border' dx='1' dy='1' result='secondShadow_1'/>
+                      <feOffset in='border' dx='2' dy='2' result='secondShadow_2'/>
+                      <feOffset in='border' dx='3' dy='3' result='secondShadow_3'/>
+                      <feOffset in='border' dx='4' dy='4' result='secondShadow_4'/>
+                      <feOffset in='border' dx='5' dy='5' result='secondShadow_5'/>
+                      <feOffset in='border' dx='6' dy='6' result='secondShadow_6'/>
+                      <feOffset in='border' dx='7' dy='7' result='secondShadow_7'/>
+                      <feOffset in='border' dx='8' dy='8' result='secondShadow_8'/>
+                      <feOffset in='border' dx='9' dy='9' result='secondShadow_9'/>
+                      <feOffset in='border' dx='10' dy='10' result='secondShadow_10'/>
+                      <feOffset in='border' dx='11' dy='11' result='secondShadow_11'/>
+                  
+                      <feMerge result='secondShadow'>
+                        <feMergeNode in='border'/>
+                        <feMergeNode in='secondShadow_1'/>
+                        <feMergeNode in='secondShadow_2'/>
+                        <feMergeNode in='secondShadow_3'/>
+                        <feMergeNode in='secondShadow_4'/>
+                        <feMergeNode in='secondShadow_5'/>
+                        <feMergeNode in='secondShadow_6'/>
+                        <feMergeNode in='secondShadow_7'/>
+                        <feMergeNode in='secondShadow_8'/>
+                        <feMergeNode in='secondShadow_9'/>
+                        <feMergeNode in='secondShadow_10'/>
+                        <feMergeNode in='secondShadow_11'/>
+                      </feMerge>
+                  
+                      <feImage x='0' y='0' width='600' height='200' xlink:href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/78779/stripes.svg'/>
+                      <feComposite in2='secondShadow' operator='in' result='secondShadow'/>
+                  
+                      <feMerge>
+                        <feMergeNode in='secondShadow'/>
+                        <feMergeNode in='border'/>
+                        <feMergeNode in='shadow'/>
+                        <feMergeNode in='SourceGraphic'/>
+                      </feMerge>
+                    </filter>
+                  
+                    <text dominant-baseline='middle' text-anchor='middle' x='50%' y='50%'>
+                      ABOUT ME
+                    </text>
+                  </svg>
+                <div class="about-content">
+                    <p class = "a-large" style="color:aliceblue">I'm a UX/UI Designer and Front End<br>
+                    Developer from Kanpur,India.</p>
+                    <p class = "a-small" style="color:aliceblue">I M A FRONTEND DEVELOPER, I M A WEBDEVELOPER<BR>
+                        I LOVE DESIGN AND CREATING WEBPAGES DJFFMN/<Br>
+                        F,MNS,F,MDNS, DHFH.<BR>
+                        KJD.S,MN.,MDS DKJKJFHKDSN.FMN/KSKD<BR>
+                        FHGHJHNBGMNBBMNNB JHKKJHKNM JH,M NHN VBV<BR>
+                        SDBBM JHDSBMNFB HJHGFDNSD DHFFNMDS <BR>
+                            HHGDSFHGD,JS HGD,NFBDS <bR><BR>
+                               
+                    </p>
+                </div>
+                <div class="social-buttons">
+                    <i class="fa-solid fa-palette " style="color: #ffffff;"></i>
+                    <i class="fa-solid fa-code " style="color: #fafcff;"></i>
+                </div>
+            </div>
+        </div>
+        <div>dfdsbnmnbmbn</div>
+        <div class="image-container">
+            <img src="w.png" alt="About Image" class="about-image">
+        </div>
+        
+    
+    <div class="image-gallery">
+        <div class="image-box">
+            <img src="c1.jpeg" alt="Gallery Image 1">
+        </div>
+        <div class="image-box">
+            <img src="c2.jpeg" alt="Gallery Image 2">
+        </div>
+        <div class="image-box">
+            <img src="c3.jpeg" alt="Gallery Image 3">
+        </div>
+        <div class="image-box">
+            <img src="c4.jpeg" alt="Gallery Image 4">
+        </div>
+        <div class="image-box">
+            <img src="c5.jpeg" alt="Gallery Image 5">
+        </div>
+    </div>
+</div>
+  <!-- ---------skills-------- -->
+<div class="skills" id="skills">
+       <h1 class ="main"> <span class="webdev">SKILLS</span></h1>
+        <!-- <span class="socod">TEXT EFFECT</span> -->
+    <div class="black-container">
+      <div class="image-box-s">
+        <img src="java.jpg" alt="Java">
+        <p>Java</p>
+      </div>
+      <div class="image-box-s">
+        <img src="github.jpg" alt="GitHub">
+        <p>GitHub</p>
+      </div>
+      <div class="image-box-s">
+        <img src="js.jpg" alt="JavaScript">
+        <p>JavaScript</p>
+      </div>
+      <div class="image-box-s">
+        <img src="html.jpg" alt="HTML">
+        <p>HTML</p>
+      </div>
+      <div class="image-box-s">
+        <img src="visual.jpg" alt="Visual Studio">
+        <p>Visual Studio</p>
+      </div>
+      <div class="image-box-s">
+        <img src="sql.jpg" alt="SQL">
+        <p>SQL</p>
+      </div>
+      <div class="image-box-s">
+        <img src="css.jpg" alt="CSS">
+        <p>CSS</p>
+      </div>
+      <div class="image-box-s">
+        <img src="react.jpg" alt="React">
+        <p>React</p>
+      </div>
+      <div class="image-box-s">
+        <img src="sql.jpg" alt="SQL">
+        <p>SQL</p>
+      </div>
+      <div class="image-box-s">
+        <img src="c.jpg" alt="C">
+        <p>C</p>
+      </div>
+    </div>
+    <div><br><br><br><br></div>
+  </div>
+  <!-- Projects -->
+  <div class="container" id="container">
+    <h1 class = "h1project">Project</h1>
+    <p class ="pproject">Aa project is not just a product or outcome; it's a narrative that encapsulates the journey from conception to completion, illustrating creativity, problem-solving skills, teamwork, and the ability to deliver tangible results.</p>
+    <a href="#" class ="aproject">Learn more</a>
+  </div>
+  
+  <div class="blank"></div>
+  
+  <div class="container second">
+    <div class="item">
+      <div class="img img-first"></div>
+      <div class="card">
+        <h3 class ="h3project">Green Eye</h3>
+        <p class ="pproject">The goal is to reach the summit of a formation or the endpoint of a usually pre-defined route without falling</p>
+        <a href="#" class = "aproject">Learn more</a>
+      </div>
+    </div>
+    <div class="item">
+      <div class="img img-second"></div>
+      <div class="card">
+        <h3 class ="h3project">Translator</h3>
+        <p class ="pproject">Exploring underground through networks of tunnels and passageways, which can be natural or artificial.</p>
+        <a class ="aproject" href="#">Learn more</a>
+      </div>
+    </div>
+    <div class="item">
+      <div class="img img-third"></div>
+      <div class="card">
+        <h3 class ="h3project">BubbleGame</h3>
+        <p class ="pproject">Jumping from an aeroplane and falling through the air before opening your parachute.</p>
+        <a class ="aproject"href="#">Learn more</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="blank"></div>
+< <!-- Contact Section -->
+<div class="w3-padding-64 w3-padding-64 w3-content w3-text-grey w3-text-grey" id="contact">
+    <h2 class="w3-text-light-grey">Contact Me</h2>
+    <hr style="width:200px" class="w3-opacity" >
+
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Mahewa, Prayagraj</p>
+      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +91 7880486769</p>
+      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: janhvis51@gmail.com</p>
+    </div><br>
+    <p>Let's get in touch. Send me a message:</p>
+
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
+      <p>
+        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </p>
+    </form>
+  <!-- End Contact Section -->
+  </div>
+  
+    <!-- Footer -->
+  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i> 
+  <!-- End footer -->
+  </footer>
+   </body>
+</html>
