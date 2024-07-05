@@ -185,9 +185,3 @@
 })();
 // skills///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function showContent(box) {
-    const overlay = box.querySelector('.project-overlay');
-    overlay.style.opacity = '1';
-    box.querySelector('img').style.opacity = '0';
-}
-

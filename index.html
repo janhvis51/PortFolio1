@@ -30,6 +30,7 @@
     <title>Document</title>
 </head>
 <body>
+  
     <div id="large-header" class="large-header">
        <div class="hero-header">
             <div class="wrapper">
@@ -101,123 +102,97 @@
     </div>
     <!-- ---------about-------- -->
     <div class="about-container" id="about-container">
-        <div class="content-container">
-            <div class="about-caption">
-                <svg width='600' height='200'>
-                    <filter id='money'>
-                      <feMorphology in='SourceGraphic' operator='dilate' radius='2' result='expand'/>
-                  
-                      <feOffset in='expand' dx='1' dy='1' result='shadow_1'/>
-                      <feOffset in='expand' dx='2' dy='2' result='shadow_2'/>
-                      <feOffset in='expand' dx='3' dy='3' result='shadow_3'/>
-                      <feOffset in='expand' dx='4' dy='4' result='shadow_4'/>
-                      <feOffset in='expand' dx='5' dy='5' result='shadow_5'/>
-                      <feOffset in='expand' dx='6' dy='6' result='shadow_6'/>
-                      <feOffset in='expand' dx='7' dy='7' result='shadow_7'/>
-                  
+      <div class="content-container">
+          <div class="about-caption">
+              <svg width='600' height='200'>
+                  <filter id='money'>
+                      <feMorphology in='SourceGraphic' operator='dilate' radius='2' result='expand' />
+                      <feOffset in='expand' dx='1' dy='1' result='shadow_1' />
+                      <feOffset in='expand' dx='2' dy='2' result='shadow_2' />
+                      <feOffset in='expand' dx='3' dy='3' result='shadow_3' />
+                      <feOffset in='expand' dx='4' dy='4' result='shadow_4' />
+                      <feOffset in='expand' dx='5' dy='5' result='shadow_5' />
+                      <feOffset in='expand' dx='6' dy='6' result='shadow_6' />
+                      <feOffset in='expand' dx='7' dy='7' result='shadow_7' />
                       <feMerge result='shadow'>
-                        <feMergeNode in='expand'/>
-                        <feMergeNode in='shadow_1'/>
-                        <feMergeNode in='shadow_2'/>
-                        <feMergeNode in='shadow_3'/>
-                        <feMergeNode in='shadow_4'/>
-                        <feMergeNode in='shadow_5'/>
-                        <feMergeNode in='shadow_6'/>
-                        <feMergeNode in='shadow_7'/>
+                          <feMergeNode in='expand' />
+                          <feMergeNode in='shadow_1' />
+                          <feMergeNode in='shadow_2' />
+                          <feMergeNode in='shadow_3' />
+                          <feMergeNode in='shadow_4' />
+                          <feMergeNode in='shadow_5' />
+                          <feMergeNode in='shadow_6' />
+                          <feMergeNode in='shadow_7' />
                       </feMerge>
-                  
-                      <feFlood flood-color='#ebe7e0'/>
-                      <feComposite in2='shadow' operator='in' result='shadow'/>
-                  
-                      <feMorphology in='shadow' operator='dilate' radius='1' result='border'/>
-                      <feFlood flood-color='#35322a' result='border_color'/>
-                      <feComposite in2='border' operator='in' result='border'/>
-                  
-                      <feOffset in='border' dx='1' dy='1' result='secondShadow_1'/>
-                      <feOffset in='border' dx='2' dy='2' result='secondShadow_2'/>
-                      <feOffset in='border' dx='3' dy='3' result='secondShadow_3'/>
-                      <feOffset in='border' dx='4' dy='4' result='secondShadow_4'/>
-                      <feOffset in='border' dx='5' dy='5' result='secondShadow_5'/>
-                      <feOffset in='border' dx='6' dy='6' result='secondShadow_6'/>
-                      <feOffset in='border' dx='7' dy='7' result='secondShadow_7'/>
-                      <feOffset in='border' dx='8' dy='8' result='secondShadow_8'/>
-                      <feOffset in='border' dx='9' dy='9' result='secondShadow_9'/>
-                      <feOffset in='border' dx='10' dy='10' result='secondShadow_10'/>
-                      <feOffset in='border' dx='11' dy='11' result='secondShadow_11'/>
-                  
+                      <feFlood flood-color='#ebe7e0' />
+                      <feComposite in2='shadow' operator='in' result='shadow' />
+                      <feMorphology in='shadow' operator='dilate' radius='1' result='border' />
+                      <feFlood flood-color='#35322a' result='border_color' />
+                      <feComposite in2='border' operator='in' result='border' />
+                      <feOffset in='border' dx='1' dy='1' result='secondShadow_1' />
+                      <feOffset in='border' dx='2' dy='2' result='secondShadow_2' />
+                      <feOffset in='border' dx='3' dy='3' result='secondShadow_3' />
+                      <feOffset in='border' dx='4' dy='4' result='secondShadow_4' />
+                      <feOffset in='border' dx='5' dy='5' result='secondShadow_5' />
+                      <feOffset in='border' dx='6' dy='6' result='secondShadow_6' />
+                      <feOffset in='border' dx='7' dy='7' result='secondShadow_7' />
+                      <feOffset in='border' dx='8' dy='8' result='secondShadow_8' />
+                      <feOffset in='border' dx='9' dy='9' result='secondShadow_9' />
+                      <feOffset in='border' dx='10' dy='10' result='secondShadow_10' />
+                      <feOffset in='border' dx='11' dy='11' result='secondShadow_11' />
                       <feMerge result='secondShadow'>
-                        <feMergeNode in='border'/>
-                        <feMergeNode in='secondShadow_1'/>
-                        <feMergeNode in='secondShadow_2'/>
-                        <feMergeNode in='secondShadow_3'/>
-                        <feMergeNode in='secondShadow_4'/>
-                        <feMergeNode in='secondShadow_5'/>
-                        <feMergeNode in='secondShadow_6'/>
-                        <feMergeNode in='secondShadow_7'/>
-                        <feMergeNode in='secondShadow_8'/>
-                        <feMergeNode in='secondShadow_9'/>
-                        <feMergeNode in='secondShadow_10'/>
-                        <feMergeNode in='secondShadow_11'/>
+                          <feMergeNode in='border' />
+                          <feMergeNode in='secondShadow_1' />
+                          <feMergeNode in='secondShadow_2' />
+                          <feMergeNode in='secondShadow_3' />
+                          <feMergeNode in='secondShadow_4' />
+                          <feMergeNode in='secondShadow_5' />
+                          <feMergeNode in='secondShadow_6' />
+                          <feMergeNode in='secondShadow_7' />
+                          <feMergeNode in='secondShadow_8' />
+                          <feMergeNode in='secondShadow_9' />
+                          <feMergeNode in='secondShadow_10' />
+                          <feMergeNode in='secondShadow_11' />
                       </feMerge>
-                  
-                      <feImage x='0' y='0' width='600' height='200' xlink:href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/78779/stripes.svg'/>
-                      <feComposite in2='secondShadow' operator='in' result='secondShadow'/>
-                  
+                      <feImage x='0' y='0' width='600' height='200' xlink:href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/78779/stripes.svg' />
+                      <feComposite in2='secondShadow' operator='in' result='secondShadow' />
                       <feMerge>
-                        <feMergeNode in='secondShadow'/>
-                        <feMergeNode in='border'/>
-                        <feMergeNode in='shadow'/>
-                        <feMergeNode in='SourceGraphic'/>
+                          <feMergeNode in='secondShadow' />
+                          <feMergeNode in='border' />
+                          <feMergeNode in='shadow' />
+                          <feMergeNode in='SourceGraphic' />
                       </feMerge>
-                    </filter>
-                  
-                    <text dominant-baseline='middle' text-anchor='middle' x='50%' y='50%'>
+                  </filter>
+                  <text dominant-baseline='middle' text-anchor='middle' x='50%' y='50%'>
                       ABOUT ME
-                    </text>
-                  </svg>
-                <div class="about-content">
-                    <p class = "a-large" style="color:aliceblue">I'm a UX/UI Designer and Front End<br>
-                    Developer from Kanpur,India.</p>
-                    <p class = "a-small" style="color:aliceblue">I M A FRONTEND DEVELOPER, I M A WEBDEVELOPER<BR>
-                        I LOVE DESIGN AND CREATING WEBPAGES DJFFMN/<Br>
-                        F,MNS,F,MDNS, DHFH.<BR>
-                        KJD.S,MN.,MDS DKJKJFHKDSN.FMN/KSKD<BR>
-                        FHGHJHNBGMNBBMNNB JHKKJHKNM JH,M NHN VBV<BR>
-                        SDBBM JHDSBMNFB HJHGFDNSD DHFFNMDS <BR>
-                            HHGDSFHGD,JS HGD,NFBDS <bR><BR>
-                               
-                    </p>
-                </div>
-                <div class="social-buttons">
-                    <i class="fa-solid fa-palette " style="color: #ffffff;"></i>
-                    <i class="fa-solid fa-code " style="color: #fafcff;"></i>
-                </div>
-            </div>
-        </div>
-        <div>dfdsbnmnbmbn</div>
-        <div class="image-container">
-            <img src="w.png" alt="About Image" class="about-image">
-        </div>
-        
-    
-    <div class="image-gallery">
-        <div class="image-box">
-            <img src="c1.jpeg" alt="Gallery Image 1">
-        </div>
-        <div class="image-box">
-            <img src="c2.jpeg" alt="Gallery Image 2">
-        </div>
-        <div class="image-box">
-            <img src="c3.jpeg" alt="Gallery Image 3">
-        </div>
-        <div class="image-box">
-            <img src="c4.jpeg" alt="Gallery Image 4">
-        </div>
-        <div class="image-box">
-            <img src="c5.jpeg" alt="Gallery Image 5">
-        </div>
-    </div>
-</div>
+                  </text>
+              </svg>
+              <div class="about-content">
+                  <p class="a-large" style="color: aliceblue;">I'm a UX/UI Designer and Front End Developer from Kanpur, India.</p>
+                  <p class="a-small" style="color: aliceblue;">I M A FRONTEND DEVELOPER, I M A WEB DEVELOPER<br>
+                      I LOVE DESIGN AND CREATING WEBPAGES DJFFMN/<br>
+                      F,MNS,F,MDNS, DHFH.<br>
+                      KJD.S,MN.,MDS DKJKJFHKDSN.FMN/KSKD<br>
+                      FHGHJHNBGMNBBMNNB JHKKJHKNM JH,M NHN VBV<br>
+                      SDBBM JHDSBMNFB HJHGFDNSD DHFFNMDS<br>
+                      HHGDSFHGD,JS HGD,NFBDS<br><br>
+                  </p>
+              </div>
+              <div class="social-buttons">
+                  <i class="fa-solid fa-palette" style="color: #ffffff;"></i>
+                  <i class="fa-solid fa-code" style="color: #fafcff;"></i>
+              </div>
+          </div>
+      </div>
+      <div>dfdsbnmnbmbn</div>
+      <div class="image-container">
+          <img src="w.png" alt="About Image" class="about-image">
+          <div class="dots-container"></div>
+      </div>
+      <div class="image-gallery"></div>
+  </div>
+  
+  
   <!-- ---------skills-------- -->
 <div class="skills" id="skills">
        <h1 class ="main"> <span class="webdev">SKILLS</span></h1>
@@ -281,10 +256,10 @@
       <div class="card">
         <h3 class ="h3project">Green Eye</h3>
         <p class ="pproject">The goal is to reach the summit of a formation or the endpoint of a usually pre-defined route without falling</p>
-        <a href="#" class = "aproject">Learn more</a>
+        <a href="#item" class = "aproject">Learn more</a>
       </div>
     </div>
-    <div class="item">
+    <div class="item" id = "item">
       <div class="img img-second"></div>
       <div class="card">
         <h3 class ="h3project">Translator</h3>
@@ -303,7 +278,7 @@
   </div>
   
   <div class="blank"></div>
-< <!-- Contact Section -->
+<!-- < Contact Section -->
 <div class="w3-padding-64 w3-padding-64 w3-content w3-text-grey w3-text-grey" id="contact">
     <h2 class="w3-text-light-grey">Contact Me</h2>
     <hr style="width:200px" class="w3-opacity" >
@@ -326,7 +301,6 @@
         </button>
       </p>
     </form>
-  <!-- End Contact Section -->
   </div>
   
     <!-- Footer -->
@@ -339,5 +313,6 @@
     <i class="fa fa-linkedin w3-hover-opacity"></i> 
   <!-- End footer -->
   </footer>
+
    </body>
 </html>
